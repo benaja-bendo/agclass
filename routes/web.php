@@ -4,6 +4,7 @@ use App\Http\Controllers\AstucesController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/profil', [ProfileController::class, 'index'])->name('profil.index')->middleware('auth');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/politique-de-confidentialite', [HomeController::class, 'politiqueDeConfidentialite'])->name('pdC');
 

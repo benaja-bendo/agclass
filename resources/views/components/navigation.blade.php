@@ -47,13 +47,15 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="{{ route("profil.index") }}">
+                            mon profil
+                        </a>
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Déconnexion') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -74,8 +76,20 @@
         <!-- Responsive Navigation Menu -->
         <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
             <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
+                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                    Accueil
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('formation.index')" :active="request()->routeIs('formation.index')">
+                    formation
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('catalogue.index')" :active="request()->routeIs('catalogue.index')">
+                    catalogue
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('astuces.index')" :active="request()->routeIs('astuces.index')">
+                    astuces
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('ebooks.index')" :active="request()->routeIs('ebooks.index')">
+                    ebooks
                 </x-responsive-nav-link>
             </div>
 
@@ -87,13 +101,15 @@
                 </div>
 
                 <div class="mt-3 space-y-1">
+                    <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="{{ route("profil.index") }}">
+                        mon profil
+                    </a>
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-
                         <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            Déconnexion
                         </x-responsive-nav-link>
                     </form>
                 </div>
