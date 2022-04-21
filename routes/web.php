@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AstucesController;
+use App\Http\Controllers\CatalogueController;
+use App\Http\Controllers\FormationController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +17,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/politique-de-confidentialite', [HomeController::class, 'politiqueDeConfidentialite'])->name('pdC');
+
+Route::resource('/formation', FormationController::class);
+Route::resource('/catalogue', CatalogueController::class);
+Route::resource('/astuces', AstucesController::class);
+Route::resource('/ebooks', AstucesController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
