@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AstucesController;
 use App\Http\Controllers\CatalogueController;
+use App\Http\Controllers\EbooksController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -26,7 +27,7 @@ Route::get('/politique-de-confidentialite', [HomeController::class, 'politiqueDe
 Route::resource('/formation', FormationController::class);
 Route::resource('/catalogue', CatalogueController::class);
 Route::resource('/astuces', AstucesController::class);
-Route::resource('/ebooks', AstucesController::class);
+Route::resource('/ebooks', EbooksController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

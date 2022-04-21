@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="scroll-smooth" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,9 +37,11 @@
 
 </head>
 <body class="font-sans antialiased min-h-screen flex flex-col">
-    <div class="flex-1 bg-gray-100">
+    <div class="lg:fixed lg:w-full lg:top-0 lg:left-0 lg:z-30">
         <x-navigation />
-        <main class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    </div>
+    <div class="flex-1 bg-gray-100 lg:mt-16">
+        <main class="{{ $p ?? 'max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8' }}">
             {{ $slot }}
         </main>
     </div>
@@ -49,3 +51,11 @@
     {{ $script ?? '' }}
 </body>
 </html>
+<!--
+  _                 _
+ | |__   ___   ___ | | _____
+ | '_ \ / _ \ / _ \| |/ / __|
+ | |_) | (_) | (_) |   <\__ \
+ |_.__/ \___/ \___/|_|\_\___/
+    benaja bendo
+-->

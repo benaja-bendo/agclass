@@ -1,8 +1,31 @@
-<footer class="bg-white border-t py-1">
+<footer class="bg-white border-t pt-1">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <section>
+        <section class="pb-4">
+            <div class="md:flex md:justify-between">
+                <div class="md:mb-0">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="agclass" class="block h-10 w-auto fill-current text-gray-600">
+
+                </div>
+
+                <div class="ml-auto">
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h3>
+                        <ul>
+                            <li class="mb-4">
+                                <a href="{{ route('about') }}" class="text-gray-600 hover:underline dark:text-gray-400">
+                                    A propos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('pdC') }}" class="text-gray-600 hover:underline dark:text-gray-400">
+                                    Termes &amp; conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="flex items-center justify-between">
+        <section class="flex items-center justify-between pb-4">
             <div>
                 © 2022 {{ config('app.name', 'agclass') }} Tous les droits sont réservés.
             </div>
