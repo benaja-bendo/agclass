@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/profil', [ProfileController::class, 'index'])->name('profil.index')->middleware('auth');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profil.index')->middleware('auth');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/politique-de-confidentialite', [HomeController::class, 'politiqueDeConfidentialite'])->name('pdC');
 

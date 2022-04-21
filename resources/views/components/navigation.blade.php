@@ -1,7 +1,7 @@
 <header class="bg-white border-b border-gray-100">
     <nav x-data="{ open: false }" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Primary Navigation Menu -->
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between items-center h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -63,12 +63,12 @@
                     </x-slot>
                 </x-dropdown>
                 @else
-                <div class="flex flex-col items-start justify-end w-full pt-4 md:items-center md:w-1/3 md:flex-row md:py-0">
-                    <a href="{{ route('login') }}" class="w-full px-6 py-2 mr-0 text-gray-700 md:px-0 lg:pl-2 md:mr-4 lg:mr-5 md:w-auto">
+                <div class="flex justify-end items-center w-full">
+                    <a href="{{ route('login') }}" class="px-6 py-2 mr-0 shadow-sm hover:shadow-md text-gray-700 rounded-full w-auto min-w-fit">
                         se connecter
                     </a>
                     @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white bg-indigo-600 md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-indigo-500 focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-indigo-600">
+                    <a href="{{ route('register') }}" class="inline-flex items-center w-full md:ml-1 px-6 py-3 text-sm font-medium leading-4 text-white bg-indigo-600 md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-indigo-500 focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-indigo-600">
                         s'inscrire
                     </a>
                     @endif
